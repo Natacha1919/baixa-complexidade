@@ -1,0 +1,231 @@
+:root {
+    /* Paleta UniFECAF */
+    --unifecaf-primary: #0a294a; /* Azul Escuro Principal */
+    --unifecaf-secondary: #0a294a; /* Azul Secundário (Links/Hover) */
+    --unifecaf-accent: #ffc107; /* Amarelo (Destaque/Botões +) */
+    --color-text: #333;
+    --color-bg: #f5f7fa; /* Fundo muito leve, quase branco */
+    --color-card-bg: #ffffff; /* Fundo dos cartões branco puro */
+    --color-border: #e0e6ed;
+    --shadow-subtle: 0 4px 10px rgba(0, 0, 0, 0.07); /* Sombra mais fina e elevada */
+    --shadow-input-focus: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Foco moderno */
+}
+
+/* Base e Tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+main {
+    max-width: 960px; /* Largura levemente maior */
+    margin: 0 auto;
+}
+
+/* Cabeçalho e Branding */
+header {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: var(--unifecaf-primary);
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 12px; /* Mais arredondado */
+    box-shadow: var(--shadow-subtle);
+}
+
+.unifecaf-logo {
+    max-width: 200px; /* Redução sutil para parecer mais profissional */
+    margin: 0 auto 5px auto;
+}
+
+header h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+/* Card Design (Section-card) */
+.section-card {
+    background: var(--color-card-bg);
+    padding: 30px; /* Mais espaço interno */
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none; /* Remove a borda simples */
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.2s ease-in-out;
+}
+.section-card:hover {
+    transform: translateY(-2px); /* Efeito de elevação leve no hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-card legend {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--unifecaf-primary);
+    padding: 0 10px;
+    border-bottom: 2px solid var(--unifecaf-secondary); /* Linha de destaque */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Campos de Entrada (Inputs) */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 12px; /* Maior padding para melhor toque */
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* Mais arredondado */
+    font-size: 1.05rem;
+    background-color: #fcfcfc;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--unifecaf-secondary);
+    box-shadow: var(--shadow-input-focus);
+    outline: none;
+}
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+
+/* Botões Principais */
+button[type="submit"] {
+    background-color: var(--unifecaf-primary);
+    color: white;
+    font-weight: 700;
+    padding: 15px 25px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 64, 133, 0.3);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: var(--unifecaf-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Tabela de Frequência (Ajustes de UX) */
+#attendance-table th {
+    background-color: var(--unifecaf-secondary); /* Mais vibrante */
+    font-weight: 500;
+}
+#attendance-table td input {
+    padding: 12px 5px;
+    background-color: var(--color-card-bg);
+}
+
+/* Botão de Adicionar Linha (Floating Action Button style) */
+.secondary-btn {
+    width: 50px; /* Levemente maior */
+    height: 50px;
+    padding: 0;
+    background-color: var(--unifecaf-accent);
+    color: var(--color-text);
+    float: right;
+    border-radius: 50%;
+    line-height: 50px; 
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.5);
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+.secondary-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-12px) scale(1.05); /* Efeito 3D no hover */
+}
+
+/* Botão de Excluir */
+.delete-btn {
+    font-size: 1.6rem;
+    color: var(--color-error);
+    transition: color 0.2s;
+}
+.delete-btn:hover {
+    color: #a00;
+    transform: scale(1.2);
+}
+
+/* Campos de Critérios de Avaliação (Mais Limpo) */
+.criteria-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #e9ecef; /* Linha tracejada mais suave */
+    padding: 15px 0;
+    transition: background-color 0.3s;
+}
+.criteria-group:hover {
+    background-color: rgba(0, 123, 255, 0.03); /* Fundo levemente azul no hover */
+}
+.criteria-group label {
+    flex-grow: 1;
+    font-weight: 400;
+    margin-right: 20px;
+}
+.criteria-group input[type="number"] {
+    width: 80px; /* Mais compacto */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsividade - Manter a lógica de duas colunas */
+@media (min-width: 650px) {
+    fieldset > .form-group:not(.criteria-group):nth-child(odd) {
+        float: left;
+        width: 48%;
+        margin-right: 4%;
+    }
+    fieldset > .form-group:not(.criteria-group):nth-child(even) {
+        float: right;
+        width: 48%;
+        margin-right: 0;
+    }
+    fieldset:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+footer {
+    /* Define o alinhamento de texto para o centro */
+    text-align: center; 
+    
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    color: #6c757d; /* Cor suave para contraste no fundo */
+    border-top: 1px solid var(--color-border);
+    margin-top: 25px; /* Espaçamento da parte inferior do formulário */
+}
+
+/* Garante que o texto 'p' dentro do footer também use o alinhamento */
+footer p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
